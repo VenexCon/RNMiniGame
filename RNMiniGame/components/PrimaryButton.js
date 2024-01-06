@@ -22,9 +22,10 @@ const styles = StyleSheet.create({
     margin: 6,
     borderRadius: 28,
     overflow: "hidden",
+    minWidth: 120,
   },
   buttonInnerContainer: {
-    backgroundColor: "#bd0c65",
+    backgroundColor: "#890848",
     paddingVertical: 8,
     paddingHorizontal: 16,
     elevation: 2,
