@@ -3,8 +3,16 @@ import StartGameScreen from "./screens/StartGameScreen";
 import { StatusBar } from "expo-status-bar";
 import { LinearGradient } from "expo-linear-gradient";
 import background from "./assets/images/background.png";
+import GameScreen from "./screens/GameScreen";
+import { useState } from "react";
 
 export default function App() {
+  const [userNumber, setUserNumber] = useState();
+
+  const selectNumberHandler = (pickedNumber) => {
+    setUserNumber(pickedNumber);
+  };
+
   return (
     <>
       <StatusBar style="light"></StatusBar>
@@ -20,7 +28,8 @@ export default function App() {
             style={styles.appContainer}
             imageStyle={styles.backgroundImage}
           >
-            <StartGameScreen />
+            {!userNumber && <StartGameScreen />}
+            {userNumber && <GameScreen />}
           </ImageBackground>
         </LinearGradient>
       </View>
