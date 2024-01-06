@@ -1,7 +1,32 @@
-import { View, TextInput, Pressable, StyleSheet } from "react-native";
+import { View, TextInput, Pressable, StyleSheet, Alert } from "react-native";
 import PrimaryButton from "../components/PrimaryButton";
+import { useState } from "react";
 
 function StartGameScreen() {
+  const [enteredNumber, setEnteredNumber] = useState("");
+
+  const handleNumberInput = (enteredText) => {
+    setEnteredNumber(enteredText);
+  };
+
+  const resetNumberInput = () => {
+    setEnteredNumber("");
+  };
+
+  const confirmInputHandler = () => {
+    const toInt = parseInt(enteredNumber);
+    if (isNaN(toInt) || toInt < 0 || toInt > 99)
+      return Alert.alert("Error", "Has to be an umber between 1-99", [
+        {
+          text: "Okay",
+          style: "destructive",
+          onPress: resetNumberInput,
+        },
+      ]);
+
+    console.log(toInt);
+  };
+
   return (
     <View style={styles.inputContainer}>
       <TextInput
@@ -10,13 +35,15 @@ function StartGameScreen() {
         keyboardType="numeric"
         autoCapitalize="none"
         autoCorrect={false}
+        onChangeText={handleNumberInput}
+        value={enteredNumber}
       />
       <View style={styles.buttonContainer}>
         <View style={styles.buttonView}>
-          <PrimaryButton>Reset</PrimaryButton>
+          <PrimaryButton onPress={resetNumberInput}>Reset</PrimaryButton>
         </View>
         <View style={styles.buttonView}>
-          <PrimaryButton>Confirm</PrimaryButton>
+          <PrimaryButton onPress={confirmInputHandler}>Confirm</PrimaryButton>
         </View>
       </View>
     </View>
