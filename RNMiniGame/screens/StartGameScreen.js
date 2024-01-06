@@ -24,7 +24,7 @@ const styles = StyleSheet.create({
     marginHorizontal: 24,
     borderRadius: 10,
     elevation: 4,
-    backgroundColor: "#640b2a",
+    backgroundColor: "#27030f",
     /* IOS Styling  */
     shadowColor: "black",
     shadowOffset: { width: 2, height: 2 },
