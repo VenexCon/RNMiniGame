@@ -1,8 +1,10 @@
 import { View, TextInput, Pressable, StyleSheet, Alert } from "react-native";
 import PrimaryButton from "../components/PrimaryButton";
 import { useState } from "react";
+import Title from "../components/Title";
+import colors from "../constants/colors";
 
-function StartGameScreen() {
+function StartGameScreen({ selectNumberHandler }) {
   const [enteredNumber, setEnteredNumber] = useState("");
 
   const handleNumberInput = (enteredText) => {
@@ -15,7 +17,7 @@ function StartGameScreen() {
 
   const confirmInputHandler = () => {
     const toInt = parseInt(enteredNumber);
-    if (isNaN(toInt) || toInt < 0 || toInt > 99)
+    if (isNaN(toInt) || toInt < 0 || toInt > 99) {
       return Alert.alert("Error", "Has to be an umber between 1-99", [
         {
           text: "Okay",
@@ -23,8 +25,9 @@ function StartGameScreen() {
           onPress: resetNumberInput,
         },
       ]);
+    }
 
-    console.log(toInt);
+    selectNumberHandler(toInt);
   };
 
   return (
@@ -57,7 +60,7 @@ const styles = StyleSheet.create({
     marginHorizontal: 24,
     borderRadius: 10,
     elevation: 4,
-    backgroundColor: "#27030f",
+    backgroundColor: colors.primaryBG,
     /* IOS Styling  */
     shadowColor: "black",
     shadowOffset: { width: 2, height: 2 },
@@ -70,9 +73,9 @@ const styles = StyleSheet.create({
     height: 50,
     width: 50,
     fontSize: 32,
-    borderBottomColor: "#dbb741",
+    borderBottomColor: colors.secondary500,
     borderBottomWidth: 2,
-    color: "#dbb741",
+    color: colors.secondary500,
     marginVertical: 8,
     fontWeight: "bold",
     textAlign: "center",
