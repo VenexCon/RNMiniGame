@@ -7,6 +7,7 @@ const colors = {
   buttonPrimary: "#890848",
   primaryContrast: "#ffffff",
   primaryAndroidRipple: "#630735",
+  secondaryContrast: "#000000",
 };
 
 export default colors;

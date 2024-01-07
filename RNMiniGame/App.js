@@ -33,7 +33,7 @@ export default function App() {
               {!userNumber && (
                 <StartGameScreen selectNumberHandler={selectNumberHandler} />
               )}
-              {userNumber && <GameScreen />}
+              {userNumber && <GameScreen userNumber={userNumber} />}
             </SafeAreaView>
           </ImageBackground>
         </LinearGradient>
