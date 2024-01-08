@@ -29,7 +29,7 @@ export default function App() {
             style={styles.appContainer}
             imageStyle={styles.backgroundImage}
           >
-            <SafeAreaView style={styles.appContainer}>
+            <SafeAreaView style={styles.safeAreaViewStyle}>
               {!userNumber && (
                 <StartGameScreen selectNumberHandler={selectNumberHandler} />
               )}
@@ -51,5 +51,9 @@ const styles = StyleSheet.create({
   },
   backgroundImage: {
     opacity: 0.4,
+  },
+  safeAreaViewStyle: {
+    flex: 1,
+    marginTop: 20,
   },
 });

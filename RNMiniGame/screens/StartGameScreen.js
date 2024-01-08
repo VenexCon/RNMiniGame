@@ -1,7 +1,6 @@
 import { View, TextInput, Pressable, StyleSheet, Alert } from "react-native";
 import PrimaryButton from "../components/PrimaryButton";
 import { useState } from "react";
-import Title from "../components/Title";
 import colors from "../constants/colors";
 
 function StartGameScreen({ selectNumberHandler }) {
