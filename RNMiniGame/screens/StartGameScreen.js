@@ -2,6 +2,7 @@ import { View, TextInput, Pressable, StyleSheet, Alert } from "react-native";
 import PrimaryButton from "../components/PrimaryButton";
 import { useState } from "react";
 import colors from "../constants/colors";
+import Title from "../components/ui/Title";
 
 function StartGameScreen({ selectNumberHandler }) {
   const [enteredNumber, setEnteredNumber] = useState("");
@@ -30,22 +31,28 @@ function StartGameScreen({ selectNumberHandler }) {
   };
 
   return (
-    <View style={styles.inputContainer}>
-      <TextInput
-        style={styles.numberInput}
-        maxLength={2}
-        keyboardType="numeric"
-        autoCapitalize="none"
-        autoCorrect={false}
-        onChangeText={handleNumberInput}
-        value={enteredNumber}
-      />
-      <View style={styles.buttonContainer}>
-        <View style={styles.buttonView}>
-          <PrimaryButton onPress={resetNumberInput}>Reset</PrimaryButton>
-        </View>
-        <View style={styles.buttonView}>
-          <PrimaryButton onPress={confirmInputHandler}>Confirm</PrimaryButton>
+    <View>
+      <View style={styles.titleContainer}>
+        <Title>Enter a Number</Title>
+      </View>
+
+      <View style={styles.inputContainer}>
+        <TextInput
+          style={styles.numberInput}
+          maxLength={2}
+          keyboardType="numeric"
+          autoCapitalize="none"
+          autoCorrect={false}
+          onChangeText={handleNumberInput}
+          value={enteredNumber}
+        />
+        <View style={styles.buttonContainer}>
+          <View style={styles.buttonView}>
+            <PrimaryButton onPress={resetNumberInput}>Reset</PrimaryButton>
+          </View>
+          <View style={styles.buttonView}>
+            <PrimaryButton onPress={confirmInputHandler}>Confirm</PrimaryButton>
+          </View>
         </View>
       </View>
     </View>
@@ -53,9 +60,12 @@ function StartGameScreen({ selectNumberHandler }) {
 }
 
 const styles = StyleSheet.create({
+  titleContainer: {
+    marginTop: 50,
+  },
   inputContainer: {
     padding: 16,
-    marginTop: 100,
+    marginTop: 50,
     marginHorizontal: 24,
     borderRadius: 10,
     elevation: 4,

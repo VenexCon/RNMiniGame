@@ -20,6 +20,8 @@ const styles = StyleSheet.create({
     opacity: 0.8,
     alignItems: "center",
     justifyContent: "center",
+    width: "100%",
+    marginVertical: 5,
   },
   numberText: {
     fontWeight: "bold",
