@@ -1,4 +1,4 @@
-import { View, Text, StyleSheet } from "react-native";
+import { View, Text, StyleSheet, Image } from "react-native";
 import Title from "../components/ui/Title";
 import colors from "../constants/colors";
 import React from "react";
@@ -9,10 +9,18 @@ export default function GameOverScreen({ onReset, gameRounds }) {
     <View style={styles.gameOverScreenContainer}>
       <View style={styles.headerContainer}>
         <Title>Game Over!</Title>
+        <View style={styles.imageContainer}>
+          <Image
+            style={styles.image}
+            source={require("../assets/images/success.png")}
+          />
+        </View>
+
         <Text style={styles.headerText}>You Lost! </Text>
         <Text style={styles.headerText}>
           It took {gameRounds} rounds to beat you!{" "}
         </Text>
+        <Text style={styles.headerText}>Would you like to play again?</Text>
       </View>
       <View style={styles.buttonContainer}>
         <PrimaryButton onPress={onReset}>Yes</PrimaryButton>
@@ -40,7 +48,19 @@ const styles = StyleSheet.create({
   },
   headerText: {
     fontWeight: "bold",
-    fontSize: 40,
+    fontSize: 20,
     color: colors.primary500,
+  },
+  imageContainer: {
+    borderRadius: 150,
+    width: 300,
+    height: 300,
+    overflow: "hidden",
+    borderWidth: 3,
+    borderColor: colors.primary500,
+  },
+  image: {
+    width: "100%",
+    height: "100%",
   },
 });
