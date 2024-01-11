@@ -1,5 +1,10 @@
-import { View, StyleSheet, Text, ScrollView, Alert } from "react-native";
-import PrimaryButton from "../components/PrimaryButton";
+import {
+  View,
+  StyleSheet,
+  Text,
+  ScrollView,
+  useWindowDimensions,
+} from "react-native";
 import { useState, useEffect } from "react";
 import Title from "../components/ui/Title";
 import colors from "../constants/colors";
@@ -24,6 +29,8 @@ export default function GameScreen({ userNumber, onGameOver, onNewRound }) {
 
   const [currGuess, setCurrGuess] = useState(initialGuess);
   const [passedGuesses, setPassedGuesses] = useState([]);
+
+  const { width, height } = useWindowDimensions();
 
   useEffect(() => {
     if (currGuess === userNumber) {
@@ -51,8 +58,8 @@ export default function GameScreen({ userNumber, onGameOver, onNewRound }) {
     setCurrGuess(newGuess);
   }
 
-  return (
-    <View style={styles.gameScreenContainer}>
+  let content = (
+    <>
       <View style={styles.headerContainer}>
         <Title>Opponents Guess</Title>
         <Text style={styles.opponentsNumber}>{currGuess}</Text>
@@ -65,15 +72,54 @@ export default function GameScreen({ userNumber, onGameOver, onNewRound }) {
           <Ionicons name="md-remove" size={24} color={"white"} />
         </SecondaryButton>
       </View>
-      <View style={styles.roundLogContainer}>
-        <Title style={styles.roundLogTitle}> Log Rounds</Title>
-        <ScrollView style={styles.ScrollViewStyle}>
-          {passedGuesses.map((item, index) => {
-            return <NumberContainer key={index}>{item}</NumberContainer>;
-          })}
-        </ScrollView>
+    </>
+  );
+
+  if (width > 500) {
+    content = (
+      <>
+        <View style={styles.headerContainer}>
+          <Title>Opponents Guess</Title>
+        </View>
+        <View style={{ flex: 1, alignItems: "center" }}>
+          <View
+            style={[
+              styles.buttonContainer,
+              {
+                width: 350,
+                alignItems: "center",
+              },
+            ]}
+          >
+            <SecondaryButton onPress={nextGuessHandler.bind(this, "higher")}>
+              <Ionicons name="md-add" color={"white"} size={24} />
+            </SecondaryButton>
+            <Text style={[styles.opponentsNumber, { borderWidth: 0 }]}>
+              {currGuess}
+            </Text>
+            <SecondaryButton onPress={nextGuessHandler.bind(this, "lower")}>
+              <Ionicons name="md-remove" size={24} color={"white"} />
+            </SecondaryButton>
+          </View>
+        </View>
+      </>
+    );
+  }
+
+  return (
+    <>
+      {content}
+      <View style={styles.gameScreenContainer}>
+        <View style={styles.roundLogContainer}>
+          <Title style={styles.roundLogTitle}> Log Rounds</Title>
+          <ScrollView style={styles.ScrollViewStyle}>
+            {passedGuesses.map((item, index) => {
+              return <NumberContainer key={index}>{item}</NumberContainer>;
+            })}
+          </ScrollView>
+        </View>
       </View>
-    </View>
+    </>
   );
 }
 
@@ -81,6 +127,7 @@ const styles = StyleSheet.create({
   gameScreenContainer: {
     flex: 1,
     padding: 24,
+    alignItems: "center",
   },
   buttonContainer: {
     flexDirection: "row",
