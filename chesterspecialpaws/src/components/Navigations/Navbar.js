@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import "../../styles/navigationStyle.css";
 import Logo from "../../../public/logo/logo150.png";
+import Link from "next/link";
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -46,7 +47,7 @@ export default function Navbar() {
       <div className="cs-top-bar">
         <div className="cs-top-container">
           <div className="cs-top-contact">
-            <a href="" className="cs-top-link">
+            <Link href="/" className="cs-top-link">
               <Image
                 className="cs-link-icon"
                 src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Icons/phone-grey.svg"
@@ -56,9 +57,9 @@ export default function Navbar() {
                 aria-hidden="true"
                 decoding="async"
               />
-              Call us: +84 1985 33 999
-            </a>
-            <a href="" className="cs-top-link">
+              Call us: 07518 56 20 27
+            </Link>
+            <Link href="" className="cs-top-link">
               <Image
                 className="cs-link-icon"
                 src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Icons/clock-grey.svg"
@@ -69,12 +70,12 @@ export default function Navbar() {
                 decoding="async"
               />
               Opening hours: Mon - Sat: 8:00am To 9:00pm
-            </a>
+            </Link>
           </div>
         </div>
       </div>
       <div className="cs-container">
-        <a href="/" className="cs-logo" aria-label="back to home">
+        <Link href="/" className="cs-logo" aria-label="back to home">
           <Image
             src={Logo}
             alt="logo"
@@ -83,7 +84,7 @@ export default function Navbar() {
             aria-hidden="true"
             decoding="async"
           />
-        </a>
+        </Link>
 
         <nav className="cs-nav" role="navigation">
           <button
@@ -107,63 +108,51 @@ export default function Navbar() {
               aria-expanded={isMenuOpen ? "true" : "false"}
             >
               <li className="cs-li">
-                <a href="/" className="cs-li-link cs-active">
+                <Link href="/" className="cs-li-link cs-active">
                   Home
-                </a>
+                </Link>
               </li>
               <li className="cs-li">
-                <a href="/about" className="cs-li-link">
+                <Link href="#sbs-1125" className="cs-li-link">
                   About
-                </a>
+                </Link>
               </li>
-              <li
+              {/* <li
                 className={`cs-li cs-dropdown ${
                   isDropdownOpen ? "cs-active" : ""
                 }`}
-              >
-                <span className="cs-li-link" onClick={toggleDropdown}>
+              > */}
+              <li className="cs-li">
+                <Link href="#services-964" className="cs-li-link">
                   Services
-                  <Image
-                    className="cs-drop-icon"
-                    src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Icons/chev-down.svg"
-                    alt="dropdown icon"
-                    width="15"
-                    height="15"
-                    decoding="async"
-                    aria-hidden="true"
-                  />
-                </span>
-                <ul
+                </Link>
+              </li>
+              {/*  <ul
                   className={`cs-drop-ul ${isDropdownOpen ? "cs-active" : ""}`}
                 >
                   <li className="cs-drop-li">
-                    <a href="#" className="cs-li-link cs-drop-link">
+                    <Link href="#" className="cs-li-link cs-drop-link">
                       Housing
-                    </a>
+                    </Link>
                   </li>
                   <li className="cs-drop-li">
-                    <a href="#" className="cs-li-link cs-drop-link">
+                    <Link href="#" className="cs-li-link cs-drop-link">
                       Food Banks
-                    </a>
+                    </Link>
                   </li>
                 </ul>
-              </li>
-              <li className="cs-li">
-                <a href="/blog" className="cs-li-link">
+              </li> */}
+              {/* <li className="cs-li">
+                <Link href="/blog" className="cs-li-link">
                   Blog
-                </a>
-              </li>
-              <li className="cs-li">
-                <a href="/contact" className="cs-li-link">
-                  Contact
-                </a>
-              </li>
+                </Link>
+              </li> */}
             </ul>
           </div>
         </nav>
-        <a href="/contact" className="cs-button-solid cs-nav-button">
+        <Link href="#contact-1105" className="cs-button-solid cs-nav-button">
           Contact Us
-        </a>
+        </Link>
       </div>
     </header>
   );

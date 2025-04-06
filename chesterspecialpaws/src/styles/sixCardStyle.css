@@ -1,6 +1,4 @@
-/*-- -------------------------- -->
-<---          Services          -->
-<--- -------------------------- -*/
+
 
 /* Mobile - 360px */
 @media only screen and (min-width: 0rem) {
@@ -74,11 +72,11 @@
     }
 
     #services-964 .cs-item:hover .cs-h3 {
-        color: var(--bodyTextColorWhite);
+        color: var(--bodyTextColorGrey);
     }
 
     #services-964 .cs-item:hover .cs-item-text {
-        color: var(--bodyTextColorWhite);
+        color: var(--bodyTextColorGrey);
         opacity: 0.9;
     }
 

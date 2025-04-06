@@ -1,229 +1,124 @@
 "use client";
 import React from "react";
 import Image from "next/image";
+import deshedding from "../../public/images/deshedding.svg";
+import dogcuts from "../../public/images/dogcuts.svg";
+import grooming from "../../public/images/grooming.svg";
+import nailclipping from "../../public/images/nailclipping.svg";
+import sanitarytrims from "../../public/images/sanitarytrims.svg";
+import teethcleaning from "../../public/images/teethcleaning.svg";
 
 export default function SixCardService() {
   return (
     <section id="services-964">
-      <div class="cs-container">
-        <div class="cs-content">
-          <span class="cs-topper">Our Service</span>
-          <h2 class="cs-title">What We Provide To Our Customer</h2>
-          <p class="cs-text">
-            Designed to maintain your current colour, blend out a growing root
-            or balance your blonde while providing full and demi-permanent
-            coverage.
+      <div className="cs-container">
+        <div className="cs-content">
+          <span className="cs-topper">Our Services</span>
+          <h2 className="cs-title">Professional Care for Your Dog</h2>
+          <p className="cs-text">
+            We offer a full range of grooming services to keep your dog looking
+            and feeling great. From deshedding to teeth cleaning, our
+            experienced team provides gentle and professional care.
           </p>
         </div>
-        <ul class="cs-card-group">
-          <li class="cs-item">
-            <picture class="cs-icon-wrapper">
-              <Image
-                class="cs-icon"
-                loading="lazy"
-                decoding="async"
-                src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons/trees-white.svg"
-                alt="hair cut"
-                width="40"
-                height="40"
-              />
-            </picture>
-            <h3 class="cs-h3">Body Treatment</h3>
-            <p class="cs-item-text">
-              Blanket term for a whole gamut of different holistic, non-medical,
-              physical procedures aimed at helping you achieve
+        <ul className="cs-card-group">
+          <li className="cs-item">
+            <Image
+              className="cs-icon"
+              loading="lazy"
+              decoding="async"
+              src={deshedding}
+              alt="Deshedding"
+              width="40"
+              height="40"
+            />
+            <h3 className="cs-h3">Deshedding</h3>
+            <p className="cs-item-text">
+              Reduce excessive shedding and keep your dog's coat healthy with
+              our thorough deshedding treatments.
             </p>
-            <a href="" class="cs-link">
-              Read More
-            </a>
-
-            <picture class="cs-background">
-              <Image
-                loading="lazy"
-                decoding="async"
-                src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/MISC/hair1.jpg"
-                alt="hair cut"
-                width="480"
-                height="425"
-              />
-            </picture>
           </li>
-          <li class="cs-item">
-            <picture class="cs-icon-wrapper">
-              <Image
-                class="cs-icon"
-                loading="lazy"
-                decoding="async"
-                src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons/trees-white.svg"
-                alt="hair cut"
-                width="40"
-                height="40"
-              />
-            </picture>
-            <h3 class="cs-h3">Hair Care</h3>
-            <p class="cs-item-text">
-              Blanket term for a whole gamut of different holistic, non-medical,
-              physical procedures aimed at helping you achieve
+          <li className="cs-item">
+            <Image
+              className="cs-icon"
+              loading="lazy"
+              decoding="async"
+              src={grooming}
+              alt="Grooming"
+              width="40"
+              height="40"
+            />
+            <h3 className="cs-h3">Grooming</h3>
+            <p className="cs-item-text">
+              Full-service grooming including washing, trimming, and brushing
+              for a fresh and healthy coat.
             </p>
-            <a href="" class="cs-link">
-              Read More
-            </a>
-
-            <picture class="cs-background">
-              <Image
-                loading="lazy"
-                decoding="async"
-                src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/MISC/hair2.jpg"
-                alt="hair cut"
-                width="480"
-                height="425"
-              />
-            </picture>
           </li>
-          <li class="cs-item">
-            <picture class="cs-icon-wrapper">
-              <Image
-                class="cs-icon"
-                loading="lazy"
-                decoding="async"
-                src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons/trees-white.svg"
-                alt="hair cut"
-                width="40"
-                height="40"
-              />
-            </picture>
-            <h3 class="cs-h3">Make Up</h3>
-            <p class="cs-item-text">
-              Blanket term for a whole gamut of different holistic, non-medical,
-              physical procedures aimed at helping you achieve
+          <li className="cs-item">
+            <Image
+              className="cs-icon"
+              loading="lazy"
+              decoding="async"
+              src={teethcleaning}
+              alt="Teeth Cleaning"
+              width="40"
+              height="40"
+            />
+            <h3 className="cs-h3">Teeth Cleaning</h3>
+            <p className="cs-item-text">
+              Keep your pup’s teeth clean and healthy with our gentle teeth
+              cleaning service.
             </p>
-            <a href="" class="cs-link">
-              Read More
-            </a>
-
-            <picture class="cs-background">
-              <Image
-                loading="lazy"
-                decoding="async"
-                src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/MISC/hair3.jpg"
-                alt="hair cut"
-                width="480"
-                height="425"
-              />
-            </picture>
           </li>
-          <li class="cs-item">
-            <picture class="cs-icon-wrapper">
-              <Image
-                class="cs-icon"
-                loading="lazy"
-                decoding="async"
-                src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons/trees-white.svg"
-                alt="hair cut"
-                width="40"
-                height="40"
-              />
-            </picture>
-            <h3 class="cs-h3">Nail Art</h3>
-            <p class="cs-item-text">
-              Blanket term for a whole gamut of different holistic, non-medical,
-              physical procedures aimed at helping you achieve
+          <li className="cs-item">
+            <Image
+              className="cs-icon"
+              loading="lazy"
+              decoding="async"
+              src={nailclipping}
+              alt="Nail Clipping"
+              width="40"
+              height="40"
+            />
+            <h3 className="cs-h3">Nail Clipping</h3>
+            <p className="cs-item-text">
+              Prevent discomfort and injuries with regular nail trimming for
+              your dog.
             </p>
-            <a href="" class="cs-link">
-              Read More
-            </a>
-
-            <picture class="cs-background">
-              <Image
-                loading="lazy"
-                decoding="async"
-                src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/MISC/hair1.jpg"
-                alt="hair cut"
-                width="480"
-                height="425"
-              />
-            </picture>
           </li>
-          <li class="cs-item">
-            <picture class="cs-icon-wrapper">
-              <Image
-                class="cs-icon"
-                loading="lazy"
-                decoding="async"
-                src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons/trees-white.svg"
-                alt="hair cut"
-                width="40"
-                height="40"
-              />
-            </picture>
-            <h3 class="cs-h3">Beauty Products</h3>
-            <p class="cs-item-text">
-              Blanket term for a whole gamut of different holistic, non-medical,
-              physical procedures aimed at helping you achieve
+          <li className="cs-item">
+            <Image
+              className="cs-icon"
+              loading="lazy"
+              decoding="async"
+              src={sanitarytrims}
+              alt="Sanitary Trims"
+              width="40"
+              height="40"
+            />
+            <h3 className="cs-h3">Sanitary Trims</h3>
+            <p className="cs-item-text">
+              Keep your dog clean and comfortable with hygienic trims in
+              sensitive areas.
             </p>
-            <a href="" class="cs-link">
-              Read More
-            </a>
-
-            <picture class="cs-background">
-              <Image
-                loading="lazy"
-                decoding="async"
-                src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/MISC/hair2.jpg"
-                alt="hair cut"
-                width="480"
-                height="425"
-              />
-            </picture>
           </li>
-          <li class="cs-item">
-            <picture class="cs-icon-wrapper">
-              <Image
-                class="cs-icon"
-                loading="lazy"
-                decoding="async"
-                src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons/trees-white.svg"
-                alt="hair cut"
-                width="40"
-                height="40"
-              />
-            </picture>
-            <h3 class="cs-h3">Spa Massage</h3>
-            <p class="cs-item-text">
-              Blanket term for a whole gamut of different holistic, non-medical,
-              physical procedures aimed at helping you achieve
+          <li className="cs-item">
+            <Image
+              className="cs-icon"
+              loading="lazy"
+              decoding="async"
+              src={dogcuts}
+              alt="Dog Cuts"
+              width="40"
+              height="40"
+            />
+            <h3 className="cs-h3">Dog Cuts</h3>
+            <p className="cs-item-text">
+              Custom haircuts to match your dog’s breed and style preferences.
             </p>
-            <a href="" class="cs-link">
-              Read More
-            </a>
-
-            <picture class="cs-background">
-              <Image
-                loading="lazy"
-                decoding="async"
-                src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/MISC/hair3.jpg"
-                alt="hair cut"
-                width="480"
-                height="425"
-              />
-            </picture>
           </li>
         </ul>
       </div>
-
-      <picture class="cs-waves">
-        {/* <source media="(max-width: 600px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons/waves-m.svg">
-            <source media="(min-width: 601px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons/waves.svg"> */}
-        <Image
-          loading="lazy"
-          decoding="async"
-          src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons/waves.svg"
-          alt="waves graphic"
-          width="1920"
-          height="331"
-          aria-hidden="true"
-        />
-      </picture>
     </section>
   );
 }
